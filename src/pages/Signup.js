@@ -1,7 +1,7 @@
 import signup from "../assets/signup.png";
 import Template from "../components/Template";
 
-const Signup = ({isLoggedIn}) => {
+const Signup = ({isLoggedIn, setIsLoggedIn}) => {
     return(
         <div>
         <Template formType= "signup"
@@ -11,6 +11,7 @@ const Signup = ({isLoggedIn}) => {
         btn="Create Account" 
         isLoggedIn={isLoggedIn}
         image={signup}
+        setIsLoggedIn = {setIsLoggedIn}
         />      
     </div>
     )

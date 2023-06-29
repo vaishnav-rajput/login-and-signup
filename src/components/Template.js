@@ -1,8 +1,17 @@
 import Loginform from "../components/Loginform";
 import Signupform from "../components/Signupform";
 import frame from "../assets/frame.png";
+import { useNavigate } from "react-router-dom";
 
-const Template = ({formType, title, desc1, desc2, btn, isLoggedIn, image }) => {
+const Template = ({formType, title, desc1, desc2, btn, isLoggedIn, image, setIsLoggedIn }) => {
+    const navigate = useNavigate();
+
+    function submitBtnHandler(event){
+        event.preventDefault()
+        setIsLoggedIn(true)
+        navigate("/dashboard")
+    }
+
     return(
         <div>
             <div>
@@ -23,7 +32,7 @@ const Template = ({formType, title, desc1, desc2, btn, isLoggedIn, image }) => {
                     }    
             </div>
             <div>
-                <button>
+                <button onClick={submitBtnHandler}>
                         {btn}    
                 </button>        
             </div>       

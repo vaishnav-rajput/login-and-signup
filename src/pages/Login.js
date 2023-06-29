@@ -12,6 +12,7 @@ const Login = ({isLoggedIn, setIsLoggedIn}) => {
             btn="Sign In" 
             isLoggedIn={isLoggedIn}
             image={login}
+            setIsLoggedIn={setIsLoggedIn}
             />      
         </div>
     )
