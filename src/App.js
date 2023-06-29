@@ -6,6 +6,7 @@ import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import { useState } from "react";
+import About from "./pages/About";
 
 function App() {
 
@@ -19,9 +20,10 @@ return(
 
     <Routes>
         <Route path="/" element={<Home/>} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/login" element={<Login /> } />
-        <Route path="/signup"  element={<Signup/>} />
+        <Route path="/dashboard" element={<Dashboard  isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>} />
+        <Route path="/login" element={<Login isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} /> } />
+        <Route path="/signup"  element={<Signup isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>} />
+        <Route path="/about" element={<About isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>} />
     </Routes>
   </div>
 )

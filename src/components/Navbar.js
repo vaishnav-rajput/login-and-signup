@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import logo from "../assets/Logo.svg";
-    import { Link, NavLink } from "react-router-dom";
+import { Navigate, useNavigate, Link } from "react-router-dom";
 import Home from "../pages/Home";
 
 const Navbar = ({isLoggedIn, setIsLoggedIn}) => {
+    const navigate = useNavigate();
+
+
+
+
+
+    
+
     return(
         <div className="flex gap-3 justify-evenly">
             <div>
@@ -28,28 +36,28 @@ const Navbar = ({isLoggedIn, setIsLoggedIn}) => {
 
             <div className="flex justify-evenly">
                 {!isLoggedIn &&
-                    <Link className="ml-3">
-                        <button>
+                    <Link to="/login" className="ml-3">
+                        <button >
                             Login
                         </button>
                     </Link>
                 }
                 {!isLoggedIn &&
-                    <Link className="ml-3">
+                    <Link to="/signup" className="ml-3">
                         <button>
                             SignUp
                         </button>
                     </Link>
                 }
                 {isLoggedIn &&
-                    <Link className="ml-3">
+                    <Link to="/logout" className="ml-3">
                         <button>
                             LogOut
                         </button>
                     </Link>
                 }
                 {isLoggedIn &&
-                    <Link className="ml-3">
+                    <Link to="/dashboard" className="ml-3">
                         <button>
                             Dashboard
                         </button>
